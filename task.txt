@@ -1,0 +1,15 @@
+### TASK 1
+select id, date,  YEAR(date) AS year,month(date) AS month,day(date) AS day from orders;
+
+### TASK 2
+select id, date, DATE_ADD(date, interval 1 day) as new_date from orders;
+
+
+###TASK3
+select id, date, UNIX_TIMESTAMP(date) as new_date from orders;
+
+###TASK 4
+select count(id) from orders where date between "1996-07-10 00:00:00" and "1996-10-08 00:00:00";
+
+###TASK 5
+SELECT id, date, JSON_OBJECT('id', id, 'date', date) AS json_object from orders;
